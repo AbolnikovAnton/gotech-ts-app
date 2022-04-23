@@ -1,3 +1,5 @@
+import {QuestionType} from "./enums";
+
 export interface Questionnary {
     id: string,
     name: string,
@@ -31,9 +33,7 @@ export interface Answer {
     alternativeAnswer?: string
 }
 
-enum QuestionType {
-    RADIO = "radio",
-    TEXT = "text",
-    RADIOTEXT = "radioText",
-    MULTIPLE_CHOICE = "multipleChoice",
+export interface PartialAnswer {
+    selected?: number[],
+    alternativeAnswer?: string
 }

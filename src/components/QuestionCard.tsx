@@ -1,32 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import {Answer, Question} from "../models/questions";
+import {PartialAnswer, Question} from "../models/models";
+import OptionItem from "./Option";
 
 interface QuestionCardProps {
     question: Question,
-    onSelect: (answer:Answer) => {};
+    onSelect: (answer: PartialAnswer) => void;
 }
 
-const QuestionCard = (question: Question) => {
-
+const QuestionCard = (props: QuestionCardProps) => {
+    const {title, options, isRequired = false, isHidden = false, type} = props.question;
     return (
         <div>
-            <h4>{question.title}</h4>
-            {
-                question.options?.map((option) => {
-                    return <form key={optionIdx}>
-                            <span>
-                              <input
-                                  id={`q${questionIdx}`}
-                                  type={question.type}
-                                  name={question.value}
-                                  onChange={handleSelectChange}
-                                  value={select}
-                              />
-                                {option}
-                            </span>
-                    </form>
-                })
+            {!
+                isHidden ? <div>
+                {/* todo Add here check isRequired */}
+                <h4>{title}</h4>
+                {
+                    options?.map((option) => {
+                        return <OptionItem
+                            key={option.optionId}
+                            questionType={type}
+                            option={option}
+                            onSelect={props.onSelect}
+                        />
+                    })
+                }
+            </div> : null
             }
         </div>
     );
