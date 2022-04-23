@@ -1,0 +1,70 @@
+{
+  "questionnaires": [
+    {
+      "id": "firstId",
+      "name": "firstQuestion",
+      "questions": [
+        {
+          "questionId": 0,
+          "title": "What language is your favorite?",
+          "type": "radio",
+          "isRequired": true,
+          "options": [
+            {
+              "optionId": 0,
+              "question": "JavaScript"
+            },
+            {
+              "optionId": 1,
+              "question": "TypeScript",
+              "action": [
+                "show_id",
+                1
+              ]
+            },
+            {
+              "optionId": 2,
+              "question": "CoffeeScript"
+            }
+          ]
+        },
+        {
+          "questionId": 1,
+          "title": "Why do you like TypeScript?",
+          "type": "text",
+          "isHidden": true
+        },
+        {
+          "questionId": 2,
+          "title": "What do you like about programing?",
+          "type": "text"
+        },
+        {
+          "questionId": 3,
+          "title": "How was the assignment?",
+          "type": "radio",
+          "isRequired": true,
+          "options": [
+            {
+              "optionId": 0,
+              "question": "Easy"
+            },
+            {
+              "optionId": 1,
+              "question": "Normal"
+            },
+            {
+              "optionId": 2,
+              "question": "Hard"
+            },
+            {
+              "optionId": 3,
+              "type": "radioText",
+              "question": "other:"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
