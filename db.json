@@ -1,7 +1,7 @@
 {
   "questionnaires": [
     {
-      "id": "firstId",
+      "id": 0,
       "name": "firstQuestion",
       "questions": [
         {
@@ -17,10 +17,10 @@
             {
               "optionId": 1,
               "question": "TypeScript",
-              "action": [
-                "show_id",
-                1
-              ]
+              "action": {
+                "name": "show_id",
+                "data": 1
+              }
             },
             {
               "optionId": 2,
